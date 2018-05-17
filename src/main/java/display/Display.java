@@ -9,22 +9,24 @@ public class Display {
 	}
 	
 
-	public String imprime() {		
-		String display = "";
-		if("0".equals(this.valor)) {
-			String linha1 = " _ \n";
-			String linha2 = "| |\n";
-			String linha3 = "|_|\n";
-			display = linha1 + linha2 + linha3;
+	public String imprime() {
+		String[] split = this.valor.split("");
+		
+		StringBuilder builder = new StringBuilder();
+		
+		for(int linha = 0 ; linha < 3; linha++){
+			for(String numero : split){
+				String parteDigito = Digito.fromValue(numero).getImpressor().getLinha(linha);
+				builder.append(parteDigito);
+			}
+			builder.append(System.lineSeparator());
 		}
-		else {
-			String linha1 = " \n";
-			String linha2 = "|\n";
-			String linha3 = "|\n";
-			display =  linha1 + linha2 + linha3;
-		}
-		System.out.println(display);
-		return display;
+		
+		System.out.println(builder.toString());
+		
+		return builder.toString();
 	}
+	
+	
 
 }
