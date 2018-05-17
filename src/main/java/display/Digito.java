@@ -6,7 +6,8 @@ import java.util.Map;
 public enum Digito {
 	
 	ZERO("0", new Impressor0()),
-	UM("1", new Impressor1());
+	UM("1", new Impressor1()),
+	DOIS("2", new Impressor2());
 	
 	private String valor;
 	private Impressor impressor;
