@@ -7,7 +7,8 @@ public enum Digito {
 	
 	ZERO("0", new Impressor0()),
 	UM("1", new Impressor1()),
-	DOIS("2", new Impressor2());
+	DOIS("2", new Impressor2()),
+	TRES("3", new Impressor3());
 	
 	private String valor;
 	private Impressor impressor;

@@ -10,6 +10,10 @@ public class Display {
 	
 
 	public String imprime() {
+		if(!isValorValido()){
+			throw new RuntimeException("Valor inválido");
+		}
+		
 		String[] split = this.valor.split("");
 		
 		StringBuilder builder = new StringBuilder();
@@ -25,6 +29,12 @@ public class Display {
 		System.out.println(builder.toString());
 		
 		return builder.toString();
+	}
+
+
+	private boolean isValorValido() {
+		return valor != null &&
+				valor.matches("[0-9]+");
 	}
 	
 	
